@@ -1,0 +1,8 @@
+package br.ufc.dc.banco.contas;
+
+public class Conta {
+	private String numero;
+	private double saldo;
+	
+	public Conta ()
+}

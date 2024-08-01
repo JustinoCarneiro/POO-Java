@@ -1,0 +1,13 @@
+package br.ufc.dc.autarquia;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Autuador {
+	List<Autuacao> autuacoes = new ArrayList<Autuacao>();
+	
+	public void autuar(List<Multa> multa, Veiculo veiculo, Local local) {
+		Autuacao autuacao = new Autuacao(multa, veiculo, local);
+		autuacoes.add(autuacao);
+	}
+}

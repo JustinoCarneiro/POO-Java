@@ -1,0 +1,32 @@
+package br.ufc.dc.autarquia;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Autuador {
+	List<Autuacao> autuacoes = new ArrayList<Autuacao>();
+	
+	public void autuar(List<Multa> multa, Veiculo veiculo, Local local) {
+		Autuacao autuacao = new Autuacao(multa, veiculo, local);
+		autuacoes.add(autuacao);
+	}
+	
+	public List<Autuacao> getAtuacao(Local local) {
+		List<Autuacao> autuacoesEncontradas = autuacoes.stream().filter(autuacao -> autuacao.local.equals(local)).collect(Collectors.toList());
+		
+		return autuacoesEncontradas;
+	}
+	
+	public List<Autuacao> getAtuacao(Veiculo veiculo) {
+		List<Autuacao> autuacoesEncontradas = autuacoes.stream().filter(autuacao -> autuacao.veiculo.equals(veiculo)).collect(Collectors.toList());
+		
+		return autuacoesEncontradas;
+	}
+	
+	public List<Autuacao> getAtuacao(Pessoa pessoa) {
+		List<Autuacao> autuacoesEncontradas = autuacoes.stream().filter(autuacao -> autuacao.veiculo.proprietario.equals(pessoa)).collect(Collectors.toList());
+		
+		return autuacoesEncontradas;
+	}
+}

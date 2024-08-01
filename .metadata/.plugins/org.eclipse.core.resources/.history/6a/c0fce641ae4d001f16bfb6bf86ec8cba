@@ -1,0 +1,49 @@
+package autarquia;
+
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
+public class Autuacao {
+	private UUID id;
+	private List<Multa> multa;
+	private Veiculo veiculo;
+	private Local local;
+	private Date data;
+	
+	public Autuacao(List<Multa> multa, Veiculo veiculo, Local local) {
+		this.id = UUID.randomUUID();
+		this.multa = multa;
+		this.veiculo = veiculo;
+		this.local = local;
+		this.data = new Date();
+	}
+	
+	public UUID getId() {
+		return id;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public Local getLocal() {
+		return local;
+	}
+	public void setLocal(Local local) {
+		this.local = local;
+	}
+	public List<Multa> getMulta() {
+		return multa;
+	}
+	public void setMulta(List<Multa> multa) {
+		this.multa = multa;
+	}
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+}

@@ -1,0 +1,19 @@
+package br.ufc.dc.autarquia;
+
+import java.util.List;
+
+public class AutuacaoPessoa extends Autuacao{
+	private String nome;
+	
+	public AutuacaoPessoa(List<Multa> multa, Veiculo veiculo, Local local) {
+		super(multa, veiculo, local);
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+}

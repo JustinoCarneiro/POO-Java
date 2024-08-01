@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;br.ufc.dc.banco.Banco.java&apos; to &apos;BancoVector.java&apos;&#x0D;&#x0A;- Original project: &apos;banco&apos;&#x0D;&#x0A;- Original element: &apos;br.ufc.dc.banco.Banco.java&apos;&#x0D;&#x0A;- Renamed element: &apos;br.ufc.dc.banco.BancoVector.java&apos;" description="Rename compilation unit &apos;Banco.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;br.ufc.dc.banco{Banco.java" name="BancoVector.java" references="false" stamp="1722519949248" version="1.0"/>
+</session>

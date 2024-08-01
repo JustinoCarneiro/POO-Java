@@ -1,0 +1,14 @@
+package br.ufc.dc.banco.contas;
+
+public class Conta extends ContaAbstrata{
+	private String numero;
+	private double saldo;
+	
+	public Conta (String numero) {
+		super(numero);
+	}
+	
+	public void debitar(double valor) {
+		saldo -= valor;
+	}
+}

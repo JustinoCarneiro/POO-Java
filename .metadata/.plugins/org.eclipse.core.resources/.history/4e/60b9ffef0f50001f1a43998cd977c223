@@ -1,0 +1,15 @@
+package br.ufc.dc.banco;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.ufc.dc.banco.contas.Conta;
+
+public class BancoArray {
+	private List<Conta> contas;
+	private double taxaJuros = 0.1;
+	
+	public BancoArray() {
+		this.contas = new ArrayList<Conta>();
+	}
+}

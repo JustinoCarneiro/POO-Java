@@ -1,0 +1,80 @@
+package br.ufc.dc.autarquia;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Pessoa pessoa = new Pessoa(
+								"João Farias Brito",
+								"654.865.986-02",
+								"1234112",
+								"A"
+							);
+		
+		Multa multa = new Multa(
+							1230.56, 
+							"Alta", 
+							"Avanço sinal vermelho.", 
+							4, 
+							"Ultrapassou sinal vermelho em alta velocidade."
+						);
+		List<Multa> multas = new ArrayList<>();
+		multas.add(multa);
+		
+		Local local = new Local(
+							"Av. Washington Soares"
+						);
+		
+		Veiculo veiculo = new Veiculo(
+								"PNZ1234",
+								"logan",
+								"Renault",
+								2010,
+								"123EZF3FR4",
+								pessoa,
+								"carro"
+							);
+		
+		Autuacao autuacao = new Autuacao(
+									multas,
+									veiculo,
+									local
+								);
+		
+		System.out.println("Dados sobre autuação:");
+		System.out.println("ID:" + autuacao.getId());
+		System.out.println("\n");
+		List<Multa> listaMultas = autuacao.getMulta();
+		System.out.println("Multas:");
+		for(int i=0; i<listaMultas.size();i++) {
+			Multa multaListada = listaMultas.get(i);
+			System.out.println("Multa" + (i+1) + " -");
+			System.out.println("Nome:" + multaListada.getNome());
+			System.out.println("Descrição:" + multaListada.getDescricao());
+			System.out.println("Gravidade:" + multaListada.getGravidade());
+			System.out.println("Pontos:" + multaListada.getPontos());
+			System.out.println("Valor:" + multaListada.getValor());
+		}
+		System.out.println("\n");
+		System.out.println("Local -");
+		System.out.println("Endereço:" + autuacao.getLocal().getEndereco());
+		System.out.println("\n");
+		System.out.println("Data:" + autuacao.getData());
+		System.out.println("\n");
+		System.out.println("Veículo -");
+		System.out.println("Placa:" + autuacao.getVeiculo().getPlaca());
+		System.out.println("Marca:" + autuacao.getVeiculo().getMarca());
+		System.out.println("Modelo:" + autuacao.getVeiculo().getModelo());
+		System.out.println("Chassi:" + autuacao.getVeiculo().getChassi());
+		System.out.println("Tipo:" + autuacao.getVeiculo().getTipo());
+		System.out.println("Ano:" + autuacao.getVeiculo().getAno());
+		System.out.println("\n");
+		System.out.println("Propietário -");
+		System.out.println("Nome:" + autuacao.getVeiculo().getProprietario().getNome());
+		System.out.println("CPF:" + autuacao.getVeiculo().getProprietario().getCpf());
+		System.out.println("CNH:" + autuacao.getVeiculo().getProprietario().getCnh());
+		System.out.println("Tipo da CNH:" + autuacao.getVeiculo().getProprietario().getTipo_cnh());
+	}
+}
